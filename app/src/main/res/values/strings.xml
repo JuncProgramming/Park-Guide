@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">City</string>
+    <string name="category">Category</string>
+    <string name="recommendations">Recommendations</string>
+    <string name="coffee_shops">Coffee shops</string>
+    <string name="restaurants">Restaurants</string>
+    <string name="parks">Parks</string>
+    <string name="shopping_centers">Shopping Centers</string>
+
+    <string name="owoce_i_warzywa">Owoce i warzywa</string>
+    <string name="starbucks">Starbucks</string>
+    <string name="etno">Etno</string>
+    <string name="herbaciarnia_kocie_oczy">Herbaciarnia Kocie Oczy</string>
+    <string name="costa">Costa</string>
+
+    <string name="meat_point">Meat Point</string>
+    <string name="cud_miód">Cud Miód</string>
+    <string name="manekin">Manekin</string>
+    <string name="powidok">Powidok</string>
+    <string name="galicja">Galicja</string>
+
+    <string name="yosemite_national_park">Yosemite National Park</string>
+    <string name="grand_canyon_national_park">Grand Canyon National Park</string>
+    <string name="sequoia_national_park">Sequoia National Park</string>
+    <string name="rocky_mountain_national_park">Rocky Mountain National Park</string>
+    <string name="zion_national_park">Zion National Park</string>
+
+    <string name="manufaktura">Manufaktura</string>
+    <string name="sukcesja">Sukcesja</string>
+    <string name="galeria_łódzka">Galeria Łódzka</string>
+    <string name="galeria_retkińska">Galeria Retkińska</string>
+</resources>
