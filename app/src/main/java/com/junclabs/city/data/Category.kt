@@ -2,4 +2,4 @@ package com.junclabs.city.data
 
 import androidx.annotation.StringRes
 
-data class Category(@StringRes val title: Int)
+data class Category(@StringRes val title: Int, val places: List<Place>)

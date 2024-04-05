@@ -18,7 +18,8 @@ enum class Screen(@StringRes val title: Int) {
 }
 
 @Composable
-fun Navigation(navController: NavHostController = rememberNavController()) {
+fun Navigation() {
+    val navController: NavHostController = rememberNavController()
     NavHost(navController = navController, startDestination = Screen.City.name) {
         composable(route = Screen.City.name) {
             CityScreen(onClick = { navController.navigate(Screen.Category.name) })
