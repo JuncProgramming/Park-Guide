@@ -1,44 +1,56 @@
 package com.junclabs.city
 
-import androidx.annotation.StringRes
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.junclabs.city.data.DataSource
 import com.junclabs.city.ui.CategoriesScreen
 import com.junclabs.city.ui.CityScreen
+import com.junclabs.city.ui.CityViewModel
 import com.junclabs.city.ui.PlaceScreen
 
-enum class Screen(@StringRes val title: Int) {
-    City(title = R.string.app_name), Recommendations(title = R.string.recommendations), Category(
-        title = R.string.category
-    ),
+enum class Screen {
+    City, Recommendations, Category,
 }
 
 @Composable
-fun Navigation() {
+fun Navigation(
+    viewModel: CityViewModel = androidx.lifecycle.viewmodel.compose.viewModel()
+) {
+    val uiState by viewModel.uiState.collectAsState()
     val navController: NavHostController = rememberNavController()
     NavHost(navController = navController, startDestination = Screen.City.name) {
         composable(route = Screen.City.name) {
-            CityScreen(onClick = { navController.navigate(Screen.Category.name) })
+            CityScreen(
+                onCategoryClick = { navController.navigate(Screen.Category.name) },
+                viewModel = viewModel,
+                uiState = uiState
+            )
         }
         composable(route = Screen.Recommendations.name) {
-            PlaceScreen(place = DataSource.defaultPlace, onNavigationClick = {
-                navController.popBackStack(
-                    Screen.Category.name, inclusive = false
-                )
-            })
+            PlaceScreen(
+                onNavigateBack = {
+                    navController.popBackStack(
+                        Screen.Category.name, inclusive = false
+                    )
+                },
+                uiState = uiState
+            )
         }
         composable(route = Screen.Category.name) {
-            CategoriesScreen(category = DataSource.defaultCategory,
+            CategoriesScreen(
                 onPlaceClick = { navController.navigate(Screen.Recommendations.name) },
-                onNavigationClick = {
+                onNavigateBack = {
                     navController.popBackStack(
                         Screen.City.name, inclusive = false
                     )
-                })
+                },
+                viewModel = viewModel,
+                uiState = uiState
+            )
         }
     }
 }

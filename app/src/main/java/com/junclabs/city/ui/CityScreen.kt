@@ -13,11 +13,15 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.junclabs.city.R
 import com.junclabs.city.data.Category
-import com.junclabs.city.data.DataSource
 import com.junclabs.city.util.AppBar
 
 @Composable
-fun CityScreen(modifier: Modifier = Modifier, onClick: (Category) -> Unit) {
+fun CityScreen(
+    modifier: Modifier = Modifier,
+    onCategoryClick: (Category) -> Unit,
+    viewModel: CityViewModel,
+    uiState: UiState,
+) {
     Scaffold(topBar = {
         AppBar(
             title = stringResource(id = R.string.app_name),
@@ -33,8 +37,9 @@ fun CityScreen(modifier: Modifier = Modifier, onClick: (Category) -> Unit) {
             horizontalArrangement = Arrangement.spacedBy(12.dp),
             modifier = modifier.padding(innerPadding),
         ) {
-            items(DataSource.categories) { category ->
-                CategoryListItem(category = category, onClick = { onClick(category) })
+            items(uiState.categories) { category ->
+                CategoryListItem(category = category,
+                    onClick = { onCategoryClick(category); viewModel.updateCurrentCategory(it) })
             }
 
         }

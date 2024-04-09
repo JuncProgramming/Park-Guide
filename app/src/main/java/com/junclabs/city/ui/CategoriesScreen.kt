@@ -11,23 +11,23 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.junclabs.city.data.Category
 import com.junclabs.city.data.Place
 import com.junclabs.city.util.AppBar
 
 @Composable
 fun CategoriesScreen(
-    category: Category,
-    onPlaceClick: (Place) -> Unit,
     modifier: Modifier = Modifier,
-    onNavigationClick: () -> Unit
+    onPlaceClick: (Place) -> Unit,
+    onNavigateBack: () -> Unit,
+    viewModel: CityViewModel,
+    uiState: UiState
 ) {
     Scaffold(topBar = {
-        AppBar(
-            title = stringResource(id = category.title),
-            onNavigationIconClick = onNavigationClick,
-            navigateBack = true
-        )
+        uiState.currentCategory?.title?.let { stringResource(id = it) }?.let {
+            AppBar(
+                title = it, onNavigationIconClick = onNavigateBack, navigateBack = true
+            )
+        }
     }) { innerPadding ->
 
         LazyVerticalGrid(
@@ -37,8 +37,9 @@ fun CategoriesScreen(
             horizontalArrangement = Arrangement.spacedBy(12.dp),
             modifier = modifier.padding(innerPadding)
         ) {
-            items(category.places) { place ->
-                PlaceListItem(place = place, onClick = { onPlaceClick(place) })
+            items(uiState.currentCategory!!.places) { place ->
+                PlaceListItem(place = place,
+                    onClick = { onPlaceClick(place); viewModel.updateCurrentPlace(place) })
             }
 
         }
