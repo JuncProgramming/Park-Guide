@@ -7,17 +7,17 @@
     <string name="parks">Parks</string>
     <string name="shopping_centers">Shopping Centers</string>
 
-    <string name="owoce_i_warzywa">Owoce i warzywa</string>
+    <string name="owoce_i_warzywa">Owoce i Warzywa</string>
     <string name="starbucks">Starbucks</string>
-    <string name="etno">Etno</string>
+    <string name="etno">Etno Coffee</string>
     <string name="herbaciarnia_kocie_oczy">Herbaciarnia Kocie Oczy</string>
-    <string name="costa">Costa</string>
+    <string name="costa">Costa Coffee</string>
 
-    <string name="meat_point">Meat Point</string>
-    <string name="cud_miód">Cud Miód</string>
-    <string name="manekin">Manekin</string>
-    <string name="powidok">Powidok</string>
-    <string name="galicja">Galicja</string>
+    <string name="meat_point">Restauracja Meat Point</string>
+    <string name="cud_miod">Restauracja Cud Miód</string>
+    <string name="manekin">Restauracja Manekin</string>
+    <string name="powidok">Restauracja Powidok</string>
+    <string name="galicja">Restauracja Galicja</string>
 
     <string name="yosemite_national_park">Yosemite National Park</string>
     <string name="grand_canyon_national_park">Grand Canyon National Park</string>
@@ -26,7 +26,32 @@
     <string name="zion_national_park">Zion National Park</string>
 
     <string name="manufaktura">Manufaktura</string>
-    <string name="sukcesja">Sukcesja</string>
-    <string name="galeria_łódzka">Galeria Łódzka</string>
-    <string name="galeria_retkińska">Galeria Retkińska</string>
+    <string name="sukcesja">G.H.Sukcesja</string>
+    <string name="galeria_lodzka">Galeria Łódzka</string>
+    <string name="galeria_retkinska">Galeria Retkińska</string>
+
+
+
+    <string name="owoce_i_warzywaD">Owoce i Warzywa - A cozy cafe known for its fresh fruit and vegetable-themed decor, offering a variety of healthy snacks and beverages.</string>
+    <string name="starbucksD">Starbucks - A global coffeehouse chain famous for its wide selection of coffee drinks, pastries, and sandwiches, providing a familiar taste wherever you go.</string>
+    <string name="etnoD">Etno Coffee - A trendy coffee spot that blends modern design with traditional flavors, serving artisanal brews and gourmet snacks in a relaxed atmosphere.</string>
+    <string name="herbaciarnia_kocie_oczyD">Herbaciarnia Kocie Oczy - A charming tea house adorned with feline-themed decor, serving a delightful array of teas from around the world, along with pastries and light bites.</string>
+    <string name="costaD">Costa Coffee - A popular coffee chain offering a diverse range of coffee blends, along with sandwiches, wraps, and cakes, perfect for a quick caffeine fix on the go.</string>
+
+    <string name="meat_pointD">Restauracja Meat Point - A carnivore/s paradise specializing in succulent cuts of meat cooked to perfection, accompanied by hearty sides and a cozy ambiance.</string>
+    <string name="cud_miodD">Restauracja Cud Miód - A quaint restaurant known for its fusion cuisine, blending traditional flavors with innovative twists, creating memorable dining experiences.</string>
+    <string name="manekinD">Restauracja Manekin - A bustling eatery famous for its delectable crepes and pancakes served with an array of sweet and savory toppings, catering to all taste preferences.</string>
+    <string name="powidokD">Restauracja Powidok - A sophisticated dining destination offering refined dishes crafted from locally sourced ingredients, complemented by an extensive wine list and elegant decor.</string>
+    <string name="galicjaD">Restauracja Galicja - A cozy restaurant specializing in traditional Polish cuisine, showcasing hearty dishes bursting with flavor, served in a warm and inviting atmosphere.</string>
+
+    <string name="yosemite_national_parkD">Yosemite National Park - A breathtaking natural wonder renowned for its towering granite cliffs, cascading waterfalls, and diverse ecosystems, offering endless opportunities for outdoor exploration and adventure.</string>
+    <string name="grand_canyon_national_parkD">Grand Canyon National Park - An iconic landscape carved by the mighty Colorado River, boasting awe-inspiring vistas, rugged terrain, and unparalleled beauty, attracting visitors from around the globe.</string>
+    <string name="sequoia_national_parkD">Sequoia National Park - Home to the world/s largest trees, including the majestic sequoias, this national park mesmerizes with its towering forests, crystal-clear rivers, and abundant wildlife, providing a serene escape into nature.</string>
+    <string name="rocky_mountain_national_parkD">Rocky Mountain National Park - A haven for outdoor enthusiasts, offering stunning alpine landscapes, pristine lakes, and diverse wildlife amidst the majestic Rocky Mountains, inviting visitors to hike, camp, and explore to their heart/s content.</string>
+    <string name="zion_national_parkD">Zion National Park - A utopia for hikers and adventurers, boasting towering red rock cliffs, emerald pools, and narrow slot canyons, creating an otherworldly landscape that captivates the imagination and inspires exploration.</string>
+
+    <string name="manufakturaD">Manufaktura - A vibrant shopping complex housed in a renovated industrial site, featuring an eclectic mix of shops, restaurants, and entertainment venues, perfect for a day of leisurely exploration and indulgence.</string>
+    <string name="sukcesjaD">G.H. Sukcesja - A modern shopping mall offering a diverse range of retail stores, dining options, and entertainment facilities, providing a one-stop destination for all your shopping and entertainment needs.</string>
+    <string name="galeria_lodzkaD">Galeria Łódzka - A premier shopping center boasting an extensive selection of fashion boutiques, home decor stores, and dining establishments, catering to discerning shoppers seeking quality and variety.</string>
+    <string name="galeria_retkinskaD">Galeria Retkińska - A bustling shopping hub featuring popular retail chains, cozy cafes, and entertainment options, making it a go-to destination for locals and visitors alike seeking a convenient and enjoyable shopping experience.</string>
 </resources>

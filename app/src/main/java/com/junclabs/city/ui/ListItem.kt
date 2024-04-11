@@ -12,6 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.junclabs.city.data.Category
 import com.junclabs.city.data.Place
@@ -28,7 +29,7 @@ fun CategoryListItem(
         Box(
             modifier = modifier.fillMaxSize(), contentAlignment = Alignment.Center
         ) {
-            Text(text = stringResource(id = category.title), fontWeight = FontWeight.W600)
+            Text(text = stringResource(id = category.title), fontWeight = FontWeight.W600, textAlign = TextAlign.Center)
         }
     }
 }
@@ -45,7 +46,7 @@ fun PlaceListItem(
         Box(
             modifier = modifier.fillMaxSize(), contentAlignment = Alignment.Center
         ) {
-            Text(text = stringResource(id = place.title), fontWeight = FontWeight.W600)
+            Text(text = stringResource(id = place.title), fontWeight = FontWeight.W600, textAlign = TextAlign.Center)
         }
     }
 }
