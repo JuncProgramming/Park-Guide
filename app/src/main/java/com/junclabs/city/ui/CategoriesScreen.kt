@@ -37,9 +37,11 @@ fun CategoriesScreen(
             horizontalArrangement = Arrangement.spacedBy(12.dp),
             modifier = modifier.padding(innerPadding)
         ) {
-            items(uiState.currentCategory!!.places) { place ->
-                PlaceListItem(place = place,
-                    onClick = { onPlaceClick(place); viewModel.updateCurrentPlace(place) })
+            uiState.currentCategory?.let {
+                items(it.places) { place ->
+                    PlaceListItem(place = place,
+                        onClick = { onPlaceClick(place); viewModel.updateCurrentPlace(place) })
+                }
             }
 
         }
