@@ -54,4 +54,7 @@
     <string name="sukcesjaD">G.H. Sukcesja - A modern shopping mall offering a diverse range of retail stores, dining options, and entertainment facilities, providing a one-stop destination for all your shopping and entertainment needs.</string>
     <string name="galeria_lodzkaD">Galeria Łódzka - A premier shopping center boasting an extensive selection of fashion boutiques, home decor stores, and dining establishments, catering to discerning shoppers seeking quality and variety.</string>
     <string name="galeria_retkinskaD">Galeria Retkińska - A bustling shopping hub featuring popular retail chains, cozy cafes, and entertainment options, making it a go-to destination for locals and visitors alike seeking a convenient and enjoyable shopping experience.</string>
+
+    <string name="defaultPlaceDescription">Default place description</string>
+    <string name="imageContentDescription">An image representing a place</string>
 </resources>

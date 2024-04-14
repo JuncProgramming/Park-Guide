@@ -19,6 +19,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.junclabs.city.R
 import com.junclabs.city.util.AppBar
 
 @Composable
@@ -48,14 +49,21 @@ fun PlaceScreen(
                 uiState.currentPlace?.image?.let { painterResource(id = it) }?.let {
                     Image(
                         painter = it,
-                        contentDescription = null,
+                        contentDescription = stringResource(id = R.string.imageContentDescription),
                         modifier = Modifier
                             .clip(RoundedCornerShape(12.dp))
                             .fillMaxWidth()
                             .aspectRatio(1f)
                     )
                 }
-                Text(text = stringResource(id = uiState.currentPlace!!.description), fontSize = 24.sp, fontWeight = FontWeight.W500, lineHeight = 28.sp, modifier = modifier.padding(12.dp))
+                Text(text = uiState.currentPlace?.let { stringResource(id = it.description) }
+                    ?: stringResource(
+                        id = R.string.defaultPlaceDescription
+                    ),
+                    fontSize = 24.sp,
+                    fontWeight = FontWeight.W500,
+                    lineHeight = 28.sp,
+                    modifier = modifier.padding(12.dp))
             }
         }
     }
