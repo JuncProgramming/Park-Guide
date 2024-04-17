@@ -1,7 +1,7 @@
 package com.junclabs.city.util
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -16,12 +16,16 @@ import androidx.compose.runtime.Composable
 fun AppBar(title: String, onNavigationIconClick: () -> Unit, navigateBack: Boolean) {
     TopAppBar(
         title = {
-            Text(text = title)
+            Text(text = title, color = MaterialTheme.colorScheme.onPrimary)
         },
         navigationIcon = {
             if (navigateBack) {
                 IconButton(onClick = { onNavigationIconClick() }) {
-                    Icon(imageVector = Icons.Default.ArrowBack, contentDescription = null)
+                    Icon(
+                        imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                        contentDescription = null,
+                        tint = MaterialTheme.colorScheme.onPrimary
+                    )
                 }
             }
         },
