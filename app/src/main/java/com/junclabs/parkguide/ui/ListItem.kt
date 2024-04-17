@@ -1,4 +1,4 @@
-package com.junclabs.city.ui
+package com.junclabs.parkguide.ui
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -14,8 +14,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.junclabs.city.data.Category
-import com.junclabs.city.data.Place
+import com.junclabs.parkguide.data.Category
+import com.junclabs.parkguide.data.Place
 
 @Composable
 fun CategoryListItem(

@@ -1,9 +1,9 @@
-package com.junclabs.city.ui
+package com.junclabs.parkguide.ui
 
 import androidx.lifecycle.ViewModel
-import com.junclabs.city.data.Category
-import com.junclabs.city.data.DataSource
-import com.junclabs.city.data.Place
+import com.junclabs.parkguide.data.Category
+import com.junclabs.parkguide.data.DataSource
+import com.junclabs.parkguide.data.Place
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update

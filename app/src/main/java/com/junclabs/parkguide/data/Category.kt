@@ -1,4 +1,4 @@
-package com.junclabs.city.data
+package com.junclabs.parkguide.data
 
 import androidx.annotation.StringRes
 

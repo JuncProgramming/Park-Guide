@@ -1,4 +1,4 @@
-package com.junclabs.city.ui.theme
+package com.junclabs.parkguide.ui.theme
 
 import android.app.Activity
 import androidx.compose.foundation.isSystemInDarkTheme

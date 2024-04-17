@@ -1,20 +1,20 @@
-package com.junclabs.city.test
+package com.junclabs.parkguide.test
 
 import android.content.Context
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithText
 import androidx.test.platform.app.InstrumentationRegistry
-import com.junclabs.city.R
-import com.junclabs.city.data.Category
-import com.junclabs.city.data.Place
-import com.junclabs.city.ui.PlaceScreen
-import com.junclabs.city.ui.UiState
-import com.junclabs.city.ui.theme.CityTheme
+import com.junclabs.parkguide.R
+import com.junclabs.parkguide.data.Category
+import com.junclabs.parkguide.data.Place
+import com.junclabs.parkguide.ui.PlaceScreen
+import com.junclabs.parkguide.ui.UiState
+import com.junclabs.parkguide.ui.theme.CityTheme
 import org.junit.Rule
 import org.junit.Test
 
-class CityUnitTests {
+class ParkGuideUnitTests {
     @get:Rule
     val composeTestRule = createComposeRule()
 

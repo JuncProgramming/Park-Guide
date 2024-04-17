@@ -1,4 +1,4 @@
-package com.junclabs.city.ui
+package com.junclabs.parkguide.ui
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -19,8 +19,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.junclabs.city.R
-import com.junclabs.city.util.AppBar
+import com.junclabs.parkguide.R
+import com.junclabs.parkguide.util.AppBar
 
 @Composable
 fun PlaceScreen(

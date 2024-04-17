@@ -1,6 +1,6 @@
-package com.junclabs.city.data
+package com.junclabs.parkguide.data
 
-import com.junclabs.city.R
+import com.junclabs.parkguide.R
 
 object DataSource {
     private val coffeePlaces = listOf(

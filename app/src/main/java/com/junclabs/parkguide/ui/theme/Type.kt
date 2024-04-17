@@ -1,4 +1,4 @@
-package com.junclabs.city.ui.theme
+package com.junclabs.parkguide.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.junclabs.city"
+    namespace = "com.junclabs.parkguide"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.junclabs.city"
+        applicationId = "com.junclabs.parkguide"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

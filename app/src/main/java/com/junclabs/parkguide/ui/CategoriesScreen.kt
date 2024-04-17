@@ -1,4 +1,4 @@
-package com.junclabs.city.ui
+package com.junclabs.parkguide.ui
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
@@ -11,8 +11,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.junclabs.city.data.Place
-import com.junclabs.city.util.AppBar
+import com.junclabs.parkguide.data.Place
+import com.junclabs.parkguide.util.AppBar
 
 @Composable
 fun CategoriesScreen(

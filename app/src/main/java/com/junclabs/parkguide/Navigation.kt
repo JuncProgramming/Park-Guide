@@ -1,4 +1,4 @@
-package com.junclabs.city
+package com.junclabs.parkguide
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -7,10 +7,10 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.junclabs.city.ui.CategoriesScreen
-import com.junclabs.city.ui.CityScreen
-import com.junclabs.city.ui.CityViewModel
-import com.junclabs.city.ui.PlaceScreen
+import com.junclabs.parkguide.ui.CategoriesScreen
+import com.junclabs.parkguide.ui.CityScreen
+import com.junclabs.parkguide.ui.CityViewModel
+import com.junclabs.parkguide.ui.PlaceScreen
 
 enum class Screen {
     City, Recommendations, Category,
