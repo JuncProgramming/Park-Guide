@@ -1,9 +1,9 @@
 package com.junclabs.parkguide.ui
 
 import androidx.lifecycle.ViewModel
-import com.junclabs.parkguide.data.Category
+import com.junclabs.parkguide.data.State
 import com.junclabs.parkguide.data.DataSource
-import com.junclabs.parkguide.data.Place
+import com.junclabs.parkguide.data.Park
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
@@ -18,22 +18,22 @@ class CityViewModel : ViewModel() {
 
     private fun initializeUiState() {
         _uiState.value = UiState(
-            categories = DataSource.categories
+            states = DataSource.states
         )
     }
 
-    fun updateCurrentCategory(category: Category) {
+    fun updateCurrentState(state: State) {
         _uiState.update {
             it.copy(
-                currentCategory = category
+                currentState = state
             )
         }
     }
 
-    fun updateCurrentPlace(place: Place?) {
+    fun updateCurrentPark(park: Park?) {
         _uiState.update {
             it.copy(
-                currentPlace = place
+                currentPark = park
             )
         }
     }

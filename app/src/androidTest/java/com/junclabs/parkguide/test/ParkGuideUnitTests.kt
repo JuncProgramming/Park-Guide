@@ -6,11 +6,11 @@ import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithText
 import androidx.test.platform.app.InstrumentationRegistry
 import com.junclabs.parkguide.R
-import com.junclabs.parkguide.data.Category
-import com.junclabs.parkguide.data.Place
-import com.junclabs.parkguide.ui.PlaceScreen
+import com.junclabs.parkguide.data.State
+import com.junclabs.parkguide.data.Park
+import com.junclabs.parkguide.ui.DetailParkScreen
 import com.junclabs.parkguide.ui.UiState
-import com.junclabs.parkguide.ui.theme.CityTheme
+import com.junclabs.parkguide.ui.theme.ParkGuideTheme
 import org.junit.Rule
 import org.junit.Test
 
@@ -21,48 +21,48 @@ class ParkGuideUnitTests {
     @Test
     fun placeScreenContentAppearsCorrectly() {
         val context: Context = InstrumentationRegistry.getInstrumentation().targetContext
-        val zionTitleString = context.resources.getString(R.string.zion_national_park)
-        val zionDescriptionString = context.resources.getString(R.string.zion_national_parkD)
-        val zionImageContentDescriptionString =
+        val olympicTitleString = context.resources.getString(R.string.Olympic_National_Park)
+        val olympicDescriptionString = context.resources.getString(R.string.Olympic_National_Park)
+        val olympicImageContentDescriptionString =
             context.resources.getString(R.string.imageContentDescription)
-        val places = listOf(
-            Place(
-                title = R.string.zion_national_park,
-                description = R.string.zion_national_parkD,
-                image = R.drawable.zion
-            ), Place(
-                title = R.string.sequoia_national_park,
-                description = R.string.sequoia_national_parkD,
-                image = R.drawable.sequoia
-            ), Place(
-                title = R.string.yosemite_national_park,
-                description = R.string.yosemite_national_parkD,
-                image = R.drawable.yosemite
-            ), Place(
-                title = R.string.grand_canyon_national_park,
-                description = R.string.grand_canyon_national_parkD,
-                image = R.drawable.grandcanyon
+        val parks = listOf(
+            Park(
+                title = R.string.Olympic_National_Park,
+                description = R.string.Olympic_National_Park,
+                image = R.drawable.olympicnationalpark
+            ), Park(
+                title = R.string.Sequoia_National_Park,
+                description = R.string.Sequoia_National_Park,
+                image = R.drawable.sequoianationalpark
+            ), Park(
+                title = R.string.Redwood_National_and_State_Parks,
+                description = R.string.Redwood_National_and_State_Parks,
+                image = R.drawable.redwoodnationalandstateparks
+            ), Park(
+                title = R.string.Grand_Teton_National_Park,
+                description = R.string.Grand_Teton_National_Park,
+                image = R.drawable.grandtetonnationalpark
             )
         )
-        val categories = listOf(
-            Category(title = R.string.parks, places = places)
+        val states = listOf(
+            State(title = R.string.Olympic_National_Park, places = parks)
         )
         composeTestRule.setContent {
-            CityTheme {
-                PlaceScreen(
+            ParkGuideTheme {
+                DetailParkScreen(
                     onNavigateBack = {}, uiState = UiState(
-                        categories = categories, currentPlace = Place(
-                            title = R.string.zion_national_park,
-                            description = R.string.zion_national_parkD,
-                            image = R.drawable.zion
+                        states = states, currentPark = Park(
+                            title = R.string.Olympic_National_Park,
+                            description = R.string.Olympic_National_Park,
+                            image = R.drawable.olympicnationalpark
                         )
                     )
                 )
             }
         }
-        composeTestRule.onNodeWithText(zionTitleString).assertExists()
-        composeTestRule.onNodeWithText(zionDescriptionString).assertExists()
-        composeTestRule.onNodeWithContentDescription(zionImageContentDescriptionString)
+        composeTestRule.onNodeWithText(olympicTitleString).assertExists()
+        composeTestRule.onNodeWithText(olympicDescriptionString).assertExists()
+        composeTestRule.onNodeWithContentDescription(olympicImageContentDescriptionString)
             .assertExists()
     }
 }

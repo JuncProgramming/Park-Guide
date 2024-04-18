@@ -7,13 +7,13 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.junclabs.parkguide.ui.CategoriesScreen
-import com.junclabs.parkguide.ui.CityScreen
+import com.junclabs.parkguide.ui.ParksScreen
+import com.junclabs.parkguide.ui.StatesScreen
 import com.junclabs.parkguide.ui.CityViewModel
-import com.junclabs.parkguide.ui.PlaceScreen
+import com.junclabs.parkguide.ui.DetailParkScreen
 
 enum class Screen {
-    City, Recommendations, Category,
+    States, Parks, DetailPark,
 }
 
 @Composable
@@ -22,30 +22,30 @@ fun Navigation(
 ) {
     val uiState by viewModel.uiState.collectAsState()
     val navController: NavHostController = rememberNavController()
-    NavHost(navController = navController, startDestination = Screen.City.name) {
-        composable(route = Screen.City.name) {
-            CityScreen(
-                onCategoryClick = { navController.navigate(Screen.Category.name) },
+    NavHost(navController = navController, startDestination = Screen.States.name) {
+        composable(route = Screen.States.name) {
+            StatesScreen(
+                onCategoryClick = { navController.navigate(Screen.DetailPark.name) },
                 viewModel = viewModel,
                 uiState = uiState
             )
         }
-        composable(route = Screen.Recommendations.name) {
-            PlaceScreen(
+        composable(route = Screen.Parks.name) {
+            DetailParkScreen(
                 onNavigateBack = {
                     navController.popBackStack(
-                        Screen.Category.name, inclusive = false
+                        Screen.DetailPark.name, inclusive = false
                     )
                 },
                 uiState = uiState
             )
         }
-        composable(route = Screen.Category.name) {
-            CategoriesScreen(
-                onPlaceClick = { navController.navigate(Screen.Recommendations.name) },
+        composable(route = Screen.DetailPark.name) {
+            ParksScreen(
+                onPlaceClick = { navController.navigate(Screen.Parks.name) },
                 onNavigateBack = {
                     navController.popBackStack(
-                        Screen.City.name, inclusive = false
+                        Screen.States.name, inclusive = false
                     )
                 },
                 viewModel = viewModel,

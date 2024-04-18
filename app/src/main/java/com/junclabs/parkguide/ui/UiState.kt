@@ -1,11 +1,11 @@
 package com.junclabs.parkguide.ui
 
-import com.junclabs.parkguide.data.Category
+import com.junclabs.parkguide.data.State
 import com.junclabs.parkguide.data.DataSource
-import com.junclabs.parkguide.data.Place
+import com.junclabs.parkguide.data.Park
 
 data class UiState(
-    val categories: List<Category> = DataSource.categories,
-    val currentCategory: Category? = null,
-    val currentPlace: Place? = null
+    val states: List<State> = DataSource.states,
+    val currentState: State? = null,
+    val currentPark: Park? = null
 )
