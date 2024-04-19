@@ -96,6 +96,6 @@ fun ParkGuideTheme(
     }
 
     MaterialTheme(
-        colorScheme = colors, typography = Typography, content = content
+        colorScheme = colors, typography = Typography, shapes = Shapes ,content = content
     )
 }
