@@ -19,7 +19,7 @@ import com.junclabs.parkguide.util.AppBar
 fun StatesScreen(
     modifier: Modifier = Modifier,
     onCategoryClick: (State) -> Unit,
-    viewModel: CityViewModel,
+    viewModel: ParkGuideViewModel,
     uiState: UiState,
 ) {
     Scaffold(topBar = {
@@ -31,10 +31,10 @@ fun StatesScreen(
     }) { innerPadding ->
 
         LazyVerticalGrid(
-            columns = GridCells.Fixed(3),
-            contentPadding = PaddingValues(8.dp),
-            verticalArrangement = Arrangement.spacedBy(8.dp),
-            horizontalArrangement = Arrangement.spacedBy(8.dp),
+            columns = GridCells.Adaptive(minSize = 200.dp),
+            contentPadding = PaddingValues(16.dp),
+            verticalArrangement = Arrangement.spacedBy(16.dp),
+            horizontalArrangement = Arrangement.spacedBy(16.dp),
             modifier = modifier.padding(innerPadding),
         ) {
             items(uiState.states) { state ->

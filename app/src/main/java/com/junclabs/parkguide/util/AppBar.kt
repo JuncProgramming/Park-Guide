@@ -10,13 +10,18 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.text.font.FontWeight
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AppBar(title: String, onNavigationIconClick: () -> Unit, navigateBack: Boolean) {
     TopAppBar(
         title = {
-            Text(text = title, color = MaterialTheme.colorScheme.onPrimary)
+            Text(
+                text = title,
+                color = MaterialTheme.colorScheme.onPrimary,
+                fontWeight = FontWeight.W500
+            )
         },
         navigationIcon = {
             if (navigateBack) {

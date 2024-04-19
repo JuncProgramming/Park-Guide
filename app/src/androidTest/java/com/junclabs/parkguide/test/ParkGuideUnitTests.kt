@@ -22,30 +22,31 @@ class ParkGuideUnitTests {
     fun placeScreenContentAppearsCorrectly() {
         val context: Context = InstrumentationRegistry.getInstrumentation().targetContext
         val olympicTitleString = context.resources.getString(R.string.Olympic_National_Park)
-        val olympicDescriptionString = context.resources.getString(R.string.Olympic_National_Park)
+        val olympicDescriptionString =
+            context.resources.getString(R.string.Olympic_National_Park_Description)
         val olympicImageContentDescriptionString =
             context.resources.getString(R.string.imageContentDescription)
         val parks = listOf(
             Park(
                 title = R.string.Olympic_National_Park,
-                description = R.string.Olympic_National_Park,
+                description = R.string.Olympic_National_Park_Description,
                 image = R.drawable.olympicnationalpark
             ), Park(
                 title = R.string.Sequoia_National_Park,
-                description = R.string.Sequoia_National_Park,
+                description = R.string.Sequoia_National_Park_Description,
                 image = R.drawable.sequoianationalpark
             ), Park(
                 title = R.string.Redwood_National_and_State_Parks,
-                description = R.string.Redwood_National_and_State_Parks,
+                description = R.string.Redwood_National_and_State_Parks_Description,
                 image = R.drawable.redwoodnationalandstateparks
             ), Park(
                 title = R.string.Grand_Teton_National_Park,
-                description = R.string.Grand_Teton_National_Park,
+                description = R.string.Grand_Teton_National_Park_Description,
                 image = R.drawable.grandtetonnationalpark
             )
         )
         val states = listOf(
-            State(title = R.string.Olympic_National_Park, places = parks)
+            State(title = R.string.Olympic_National_Park, places = parks, flag = R.drawable.washington)
         )
         composeTestRule.setContent {
             ParkGuideTheme {
@@ -53,7 +54,7 @@ class ParkGuideUnitTests {
                     onNavigateBack = {}, uiState = UiState(
                         states = states, currentPark = Park(
                             title = R.string.Olympic_National_Park,
-                            description = R.string.Olympic_National_Park,
+                            description = R.string.Olympic_National_Park_Description,
                             image = R.drawable.olympicnationalpark
                         )
                     )

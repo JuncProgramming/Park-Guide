@@ -19,22 +19,24 @@ fun ParksScreen(
     modifier: Modifier = Modifier,
     onPlaceClick: (Park) -> Unit,
     onNavigateBack: () -> Unit,
-    viewModel: CityViewModel,
+    viewModel: ParkGuideViewModel,
     uiState: UiState
 ) {
     Scaffold(topBar = {
         uiState.currentState?.title?.let { stringResource(id = it) }?.let {
             AppBar(
-                title = it, onNavigationIconClick = onNavigateBack, navigateBack = true
+                title = "$it's national parks",
+                onNavigationIconClick = onNavigateBack,
+                navigateBack = true
             )
         }
     }) { innerPadding ->
 
         LazyVerticalGrid(
-            columns = GridCells.Fixed(2),
-            contentPadding = PaddingValues(12.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp),
-            horizontalArrangement = Arrangement.spacedBy(12.dp),
+            columns = GridCells.Adaptive(minSize = 200.dp),
+            contentPadding = PaddingValues(16.dp),
+            verticalArrangement = Arrangement.spacedBy(16.dp),
+            horizontalArrangement = Arrangement.spacedBy(16.dp),
             modifier = modifier.padding(innerPadding)
         ) {
             uiState.currentState?.let {
