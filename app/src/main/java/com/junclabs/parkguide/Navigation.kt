@@ -7,10 +7,10 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.junclabs.parkguide.ui.ParkGuideViewModel
+import com.junclabs.parkguide.ui.DetailParkScreen
 import com.junclabs.parkguide.ui.ParksScreen
 import com.junclabs.parkguide.ui.StatesScreen
-import com.junclabs.parkguide.ui.CityViewModel
-import com.junclabs.parkguide.ui.DetailParkScreen
 
 enum class Screen {
     States, Parks, DetailPark,
@@ -18,7 +18,7 @@ enum class Screen {
 
 @Composable
 fun Navigation(
-    viewModel: CityViewModel = androidx.lifecycle.viewmodel.compose.viewModel()
+    viewModel: ParkGuideViewModel = androidx.lifecycle.viewmodel.compose.viewModel()
 ) {
     val uiState by viewModel.uiState.collectAsState()
     val navController: NavHostController = rememberNavController()
