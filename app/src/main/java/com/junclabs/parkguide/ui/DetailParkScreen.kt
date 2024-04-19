@@ -19,6 +19,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -79,11 +80,11 @@ fun DetailParkScreen(
                 uiState.currentPark?.image?.let { painterResource(id = it) }?.let {
                     Image(
                         painter = it,
-                        contentDescription = stringResource(id = R.string.imageContentDescription),
+                        contentDescription = stringResource(id = R.string.parkContentDescription),
+                        contentScale = ContentScale.FillWidth,
                         modifier = Modifier
                             .clip(RoundedCornerShape(12.dp))
                             .fillMaxWidth()
-
                     )
                 }
                 Text(text = uiState.currentPark?.let { stringResource(id = it.description) }

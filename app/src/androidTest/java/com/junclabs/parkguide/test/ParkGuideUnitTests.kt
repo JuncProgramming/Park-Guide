@@ -25,7 +25,7 @@ class ParkGuideUnitTests {
         val olympicDescriptionString =
             context.resources.getString(R.string.Olympic_National_Park_Description)
         val olympicImageContentDescriptionString =
-            context.resources.getString(R.string.imageContentDescription)
+            context.resources.getString(R.string.parkContentDescription)
         val parks = listOf(
             Park(
                 title = R.string.Olympic_National_Park,
@@ -46,7 +46,9 @@ class ParkGuideUnitTests {
             )
         )
         val states = listOf(
-            State(title = R.string.Olympic_National_Park, places = parks, flag = R.drawable.washington)
+            State(
+                title = R.string.Olympic_National_Park, places = parks, flag = R.drawable.washington
+            )
         )
         composeTestRule.setContent {
             ParkGuideTheme {

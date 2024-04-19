@@ -3,7 +3,8 @@
     <string name="learnMore">Learn More</string>
     <string name="defaultParkTitle">Default park title</string>
     <string name="defaultParkDescription">Default park description</string>
-    <string name="imageContentDescription">An image representing a park</string>
+    <string name="parkContentDescription">An image representing a park</string>
+    <string name="stateFlagContentDescription">An image representing a state flag</string>
 
     <string name="Alaska">Alaska</string>
     <string name="American_Samoa">American Samoa</string>

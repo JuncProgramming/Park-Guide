@@ -216,7 +216,7 @@ object DataSource {
     private val montanaParks = listOf(
         Park(
             title = R.string.Glacier_National_Park,
-            description = R.string.Glacier_National_Park,
+            description = R.string.Glacier_National_Park_Description,
             image = R.drawable.glaciernationalpark
         ), Park(
             title = R.string.Yellowstone_National_Park,
@@ -245,7 +245,7 @@ object DataSource {
         Park(
             title = R.string.White_Sands_National_Park,
             description = R.string.Wind_Cave_National_Park_Description,
-            image = R.drawable.whitesandsnationalpark
+            image = R.drawable.windcavenationalpark
         ),
     )
     private val northCarolinaParks = listOf(
@@ -392,36 +392,36 @@ object DataSource {
     )
 
     val states = listOf(
-        State(R.string.Alaska, alaskaParks),
-        State(R.string.American_Samoa, americanSamoaParks),
-        State(R.string.Arizona, arizonaParks),
-        State(R.string.Arkansas, arkansasParks),
-        State(R.string.California, californiaParks),
-        State(R.string.Colorado, coloradoParks),
-        State(R.string.Florida, floridaParks),
-        State(R.string.Hawaii, hawaiiParks),
-        State(R.string.Idaho, idahoParks),
-        State(R.string.Indiana, indianaParks),
-        State(R.string.Maine, maineParks),
-        State(R.string.Michigan, michiganParks),
-        State(R.string.Minnesota, minnesotaParks),
-        State(R.string.Missouri, missouriParks),
-        State(R.string.Montana, montanaParks),
-        State(R.string.Nevada, nevadaParks),
-        State(R.string.New_Mexico, newMexicoParks),
-        State(R.string.North_Carolina, northCarolinaParks),
-        State(R.string.North_Dakota, northDakotaParks),
-        State(R.string.Ohio, ohioParks),
-        State(R.string.Oregon, oregonParks),
-        State(R.string.South_Carolina, southCarolinaParks),
-        State(R.string.South_Dakota, southDakotaParks),
-        State(R.string.Tennessee, tennesseeParks),
-        State(R.string.Texas, texasParks),
-        State(R.string.Utah, utahParks),
-        State(R.string.Virgin_Islands, VirginIslandsPark),
-        State(R.string.Virginia, virginiaParks),
-        State(R.string.Washington, washingtonParks),
-        State(R.string.West_Virginia, westVirginiaParks),
-        State(R.string.Wyoming, wyomingParks)
+        State(R.string.Alaska, alaskaParks, R.drawable.alaska),
+        State(R.string.American_Samoa, americanSamoaParks, R.drawable.americansamoa),
+        State(R.string.Arizona, arizonaParks, R.drawable.arizona),
+        State(R.string.Arkansas, arkansasParks, R.drawable.arkansas),
+        State(R.string.California, californiaParks, R.drawable.california),
+        State(R.string.Colorado, coloradoParks, R.drawable.colorado),
+        State(R.string.Florida, floridaParks, R.drawable.florida),
+        State(R.string.Hawaii, hawaiiParks, R.drawable.hawaii),
+        State(R.string.Idaho, idahoParks, R.drawable.idaho),
+        State(R.string.Indiana, indianaParks, R.drawable.indiana),
+        State(R.string.Maine, maineParks, R.drawable.maine),
+        State(R.string.Michigan, michiganParks, R.drawable.michigan),
+        State(R.string.Minnesota, minnesotaParks, R.drawable.minnesota),
+        State(R.string.Missouri, missouriParks, R.drawable.missouri),
+        State(R.string.Montana, montanaParks, R.drawable.montana),
+        State(R.string.Nevada, nevadaParks, R.drawable.nevada),
+        State(R.string.New_Mexico, newMexicoParks, R.drawable.newmexico),
+        State(R.string.North_Carolina, northCarolinaParks, R.drawable.northcarolina),
+        State(R.string.North_Dakota, northDakotaParks, R.drawable.northdakota),
+        State(R.string.Ohio, ohioParks, R.drawable.ohio),
+        State(R.string.Oregon, oregonParks, R.drawable.oregon),
+        State(R.string.South_Carolina, southCarolinaParks, R.drawable.southcarolina),
+        State(R.string.South_Dakota, southDakotaParks, R.drawable.southdakota),
+        State(R.string.Tennessee, tennesseeParks, R.drawable.tennessee),
+        State(R.string.Texas, texasParks, R.drawable.texas),
+        State(R.string.Utah, utahParks, R.drawable.utah),
+        State(R.string.Virgin_Islands, VirginIslandsPark, R.drawable.virginislands),
+        State(R.string.Virginia, virginiaParks, R.drawable.virginia),
+        State(R.string.Washington, washingtonParks, R.drawable.washington),
+        State(R.string.West_Virginia, westVirginiaParks, R.drawable.westvirginia),
+        State(R.string.Wyoming, wyomingParks, R.drawable.wyoming)
     )
 }

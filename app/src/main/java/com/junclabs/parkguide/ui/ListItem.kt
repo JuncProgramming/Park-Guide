@@ -1,7 +1,10 @@
 package com.junclabs.parkguide.ui
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -11,28 +14,34 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
+import com.junclabs.parkguide.R
 import com.junclabs.parkguide.data.Park
 import com.junclabs.parkguide.data.State
+import com.junclabs.parkguide.ui.theme.ParkGuideTheme
 
 @Composable
 fun StateListItem(
     state: State, onClick: (State) -> Unit, modifier: Modifier = Modifier
 ) {
-    Card(
-        modifier
-            .fillMaxWidth()
-            .aspectRatio(1.5f)
-    ) {
-        Box(
-            modifier = modifier
-                .fillMaxSize()
-                .clickable { onClick(state) },
-            contentAlignment = Alignment.Center
-        ) {
+    Card {
+        Column(horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center,
+            modifier = modifier.clickable { onClick(state) }) {
+            Image(
+                painter = painterResource(id = state.flag),
+                contentDescription = stringResource(id = R.string.stateFlagContentDescription),
+                modifier = modifier
+                    .fillMaxWidth()
+                    .aspectRatio(1.5f),
+                contentScale = ContentScale.Crop
+            )
             Text(
                 text = stringResource(id = state.title),
                 fontWeight = FontWeight.W600,
@@ -65,5 +74,20 @@ fun ParkListItem(
                 modifier = modifier.padding(8.dp)
             )
         }
+    }
+}
+
+@Composable
+@PreviewLightDark
+fun StateListItemPreview() {
+    ParkGuideTheme {
+        StateListItem(
+            state = State(
+                title = R.string.New_River_Gorge_National_Park_and_Preserve,
+                flag = R.drawable.northdakota,
+                places = emptyList()
+            ),
+            onClick = { },
+        )
     }
 }
