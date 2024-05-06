@@ -30,7 +30,7 @@ fun StatesScreen(
         )
     }) { innerPadding ->
         LazyVerticalGrid(
-            columns = GridCells.Adaptive(minSize = 200.dp),
+            columns = GridCells.Adaptive(minSize = 150.dp),
             contentPadding = PaddingValues(16.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp),
             horizontalArrangement = Arrangement.spacedBy(16.dp),

@@ -5,6 +5,7 @@
     <string name="defaultParkDescription">Default park description</string>
     <string name="parkContentDescription">An image representing a park</string>
     <string name="stateFlagContentDescription">An image representing a state flag</string>
+    <string name="favoriteButton">Toggle favorite park</string>
 
     <string name="Alaska">Alaska</string>
     <string name="American_Samoa">American Samoa</string>
@@ -96,7 +97,7 @@
     <string name="Theodore_Roosevelt_National_Park">Theodore Roosevelt National Park</string>
     <string name="Virgin_Islands_National_Park">Virgin Islands National Park</string>
     <string name="Voyageurs_National_Park">Voyageurs National Park</string>
-    <string name="White_Sands_National_Park">Wind Cave National Park</string>
+    <string name="White_Sands_National_Park">White Sands National Park</string>
     <string name="Wind_Cave_National_Park">Wind Cave National Park</string>
     <string name="WrangellSt._Elias_National_Park_and_Preserve">Wrangell–St. Elias National Park and Preserve</string>
     <string name="Yellowstone_National_Park">Yellowstone National Park</string>
