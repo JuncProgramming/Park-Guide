@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.junclabs.parkguide.R
 import com.junclabs.parkguide.data.Park
 import com.junclabs.parkguide.util.AppBar
 
@@ -25,7 +26,11 @@ fun ParksScreen(
     Scaffold(topBar = {
         uiState.currentState?.title?.let { stringResource(id = it) }?.let {
             AppBar(
-                title = "$it's national parks",
+                title = if (it == stringResource(id = R.string.Virgin_Islands)) {
+                    "$it' national parks"
+                } else {
+                    "$it's national parks"
+                },
                 onNavigationIconClick = onNavigateBack,
                 navigateBack = true
             )
@@ -33,7 +38,7 @@ fun ParksScreen(
     }) { innerPadding ->
 
         LazyVerticalGrid(
-            columns = GridCells.Adaptive(minSize = 200.dp),
+            columns = GridCells.Adaptive(minSize = 150.dp),
             contentPadding = PaddingValues(16.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp),
             horizontalArrangement = Arrangement.spacedBy(16.dp),
