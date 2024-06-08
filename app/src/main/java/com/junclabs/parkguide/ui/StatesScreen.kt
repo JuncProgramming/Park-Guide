@@ -18,7 +18,7 @@ import com.junclabs.parkguide.util.AppBar
 @Composable
 fun StatesScreen(
     modifier: Modifier = Modifier,
-    onCategoryClick: (State) -> Unit,
+    onStateClick: (State) -> Unit,
     viewModel: ParkGuideViewModel,
     uiState: UiState,
 ) {
@@ -38,7 +38,7 @@ fun StatesScreen(
         ) {
             items(uiState.states) { state ->
                 StateListItem(state = state,
-                    onClick = { onCategoryClick(state); viewModel.updateCurrentState(it) })
+                    onClick = { onStateClick(state); viewModel.updateCurrentState(it) })
             }
 
         }
