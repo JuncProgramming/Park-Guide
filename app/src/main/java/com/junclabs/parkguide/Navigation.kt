@@ -25,7 +25,7 @@ fun Navigation(
     NavHost(navController = navController, startDestination = Screen.States.name) {
         composable(route = Screen.States.name) {
             StatesScreen(
-                onCategoryClick = { navController.navigate(Screen.DetailPark.name) },
+                onStateClick = { navController.navigate(Screen.DetailPark.name) },
                 viewModel = viewModel,
                 uiState = uiState
             )
@@ -42,7 +42,7 @@ fun Navigation(
         }
         composable(route = Screen.DetailPark.name) {
             ParksScreen(
-                onPlaceClick = { navController.navigate(Screen.Parks.name) },
+                onParkClick = { navController.navigate(Screen.Parks.name) },
                 onNavigateBack = {
                     navController.popBackStack(
                         Screen.States.name, inclusive = false
