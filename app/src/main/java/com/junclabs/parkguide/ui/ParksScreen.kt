@@ -18,7 +18,7 @@ import com.junclabs.parkguide.util.AppBar
 @Composable
 fun ParksScreen(
     modifier: Modifier = Modifier,
-    onPlaceClick: (Park) -> Unit,
+    onParkClick: (Park) -> Unit,
     onNavigateBack: () -> Unit,
     viewModel: ParkGuideViewModel,
     uiState: UiState
@@ -47,7 +47,7 @@ fun ParksScreen(
             uiState.currentState?.let {
                 items(it.places) { park ->
                     ParkListItem(park = park,
-                        onClick = { onPlaceClick(park); viewModel.updateCurrentPark(park) })
+                        onClick = { onParkClick(park); viewModel.updateCurrentPark(park) })
                 }
             }
 
