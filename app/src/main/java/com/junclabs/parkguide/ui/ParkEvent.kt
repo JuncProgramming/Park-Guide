@@ -1,4 +1,4 @@
-package com.junclabs.parkguide
+package com.junclabs.parkguide.ui
 
 import com.junclabs.parkguide.data.Park
 import com.junclabs.parkguide.data.State
