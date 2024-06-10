@@ -25,7 +25,7 @@ fun AppBar(title: String, onNavigationIconClick: () -> Unit, navigateBack: Boole
         },
         navigationIcon = {
             if (navigateBack) {
-                IconButton(onClick = { onNavigationIconClick() }) {
+                IconButton(onClick = onNavigationIconClick) {
                     Icon(
                         imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                         contentDescription = null,
