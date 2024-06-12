@@ -8,7 +8,5 @@ sealed interface ParkEvent {
     data class OnCurrentParkUpdate(val park: Park) : ParkEvent
     data object OnCurrentStateClick : ParkEvent
     data object OnCurrentParkClick : ParkEvent
-    data class OnNavigateBack(
-        val route: String, val inclusive: Boolean
-    ) : ParkEvent
+    data object OnNavigateUp : ParkEvent
 }

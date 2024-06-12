@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Card
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -44,8 +45,7 @@ fun StateListItem(
             )
             Text(
                 text = stringResource(id = state.title),
-                fontWeight = FontWeight.W600,
-                textAlign = TextAlign.Center,
+                style = MaterialTheme.typography.labelSmall,
                 modifier = modifier.padding(8.dp)
             )
         }
@@ -69,6 +69,7 @@ fun ParkListItem(
         ) {
             Text(
                 text = stringResource(id = park.title),
+                style = MaterialTheme.typography.labelSmall,
                 fontWeight = FontWeight.W600,
                 textAlign = TextAlign.Center,
                 modifier = modifier.padding(8.dp)
@@ -91,3 +92,19 @@ fun StateListItemPreview() {
         )
     }
 }
+
+@Composable
+@PreviewLightDark
+fun ParkListItemPreview() {
+    ParkGuideTheme {
+        ParkListItem(
+            park = Park(
+                title = R.string.Olympic_National_Park,
+                description = R.string.Olympic_National_Park_Description,
+                image = R.drawable.olympicnationalpark
+            ),
+            onClick = { },
+        )
+    }
+}
+
