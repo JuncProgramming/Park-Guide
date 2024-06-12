@@ -50,6 +50,7 @@ android {
 }
 
 dependencies {
+    androidTestImplementation(libs.ui.test.junit4)
     implementation(libs.navigation.compose)
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
@@ -68,4 +69,6 @@ dependencies {
     androidTestImplementation(libs.ui.test.junit4)
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)
+    androidTestImplementation(libs.navigation.testing)
+    androidTestImplementation(libs.junit)
 }
