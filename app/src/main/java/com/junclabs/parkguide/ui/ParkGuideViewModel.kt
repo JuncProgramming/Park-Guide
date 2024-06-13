@@ -3,7 +3,6 @@ package com.junclabs.parkguide.ui
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.junclabs.parkguide.ParkEvent
 import com.junclabs.parkguide.Screen
 import com.junclabs.parkguide.data.DataSource
 import com.junclabs.parkguide.util.UiEvent
@@ -34,7 +33,7 @@ class ParkGuideViewModel : ViewModel() {
                         currentPark = event.park
                     )
                 }
-                Log.d("ParkGuideViewModel", "OnCurrentParkUpdate: ${event.park}")
+                Log.d("ParkGuideViewModel", "ParkUpdated: ${event.park}")
             }
 
             is ParkEvent.OnCurrentStateUpdate -> {
@@ -43,19 +42,22 @@ class ParkGuideViewModel : ViewModel() {
                         currentState = event.state
                     )
                 }
-                Log.d("ParkGuideViewModel", "OnCurrentStateUpdate: ${event.state}")
+                Log.d("ParkGuideViewModel", "StateUpdated: ${event.state}")
             }
 
             is ParkEvent.OnCurrentParkClick -> {
                 sendUiEvent(UiEvent.Navigate(Screen.DetailPark.name))
+                Log.d("ParkGuideViewModel", "NavigatedToDetailPark")
             }
 
             is ParkEvent.OnCurrentStateClick -> {
                 sendUiEvent(UiEvent.Navigate(Screen.Parks.name))
+                Log.d("ParkGuideViewModel", "NavigatedToParks")
             }
 
-            is ParkEvent.OnNavigateBack -> {
-                sendUiEvent(UiEvent.PopBackStack(event.route, event.inclusive))
+            is ParkEvent.OnNavigateUp -> {
+                sendUiEvent(UiEvent.NavigateUp)
+                Log.d("ParkGuideViewModel", "NavigatedBack")
             }
         }
     }
