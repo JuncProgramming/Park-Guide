@@ -8,21 +8,36 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.junclabs.parkguide.R
-import com.junclabs.parkguide.data.Park
 import com.junclabs.parkguide.util.AppBar
+import com.junclabs.parkguide.util.UiEvent
+import kotlinx.coroutines.flow.collectLatest
 
 @Composable
 fun ParksScreen(
     modifier: Modifier = Modifier,
-    onParkClick: (Park) -> Unit,
-    onNavigateBack: () -> Unit,
+    onNavigate: (UiEvent.Navigate) -> Unit,
+    onNavigateUp: (UiEvent.NavigateUp) -> Unit,
     viewModel: ParkGuideViewModel,
     uiState: UiState
 ) {
+    LaunchedEffect(Unit) {
+        viewModel.uiEvent.collectLatest { event ->
+            when (event) {
+                is UiEvent.NavigateUp -> {
+                    onNavigateUp(event)
+                }
+
+                is UiEvent.Navigate -> {
+                    onNavigate(event)
+                }
+            }
+        }
+    }
     Scaffold(topBar = {
         uiState.currentState?.title?.let { stringResource(id = it) }?.let {
             AppBar(
@@ -31,8 +46,8 @@ fun ParksScreen(
                 } else {
                     "$it's national parks"
                 },
-                onNavigationIconClick = onNavigateBack,
-                navigateBack = true
+                onNavigationIconClick = { viewModel.onEvent(ParkEvent.OnNavigateUp) },
+                navigateBackEnabled = true
             )
         }
     }) { innerPadding ->
@@ -46,8 +61,10 @@ fun ParksScreen(
         ) {
             uiState.currentState?.let {
                 items(it.places) { park ->
-                    ParkListItem(park = park,
-                        onClick = { onParkClick(park); viewModel.updateCurrentPark(park) })
+                    ParkListItem(park = park, onClick = {
+                        viewModel.onEvent(ParkEvent.OnCurrentParkUpdate(park))
+                        viewModel.onEvent(ParkEvent.OnCurrentParkClick)
+                    })
                 }
             }
 
