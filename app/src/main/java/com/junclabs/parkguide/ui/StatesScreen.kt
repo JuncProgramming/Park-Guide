@@ -8,25 +8,38 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.junclabs.parkguide.R
-import com.junclabs.parkguide.data.State
 import com.junclabs.parkguide.util.AppBar
+import com.junclabs.parkguide.util.UiEvent
+import kotlinx.coroutines.flow.collectLatest
 
 @Composable
 fun StatesScreen(
     modifier: Modifier = Modifier,
-    onStateClick: (State) -> Unit,
+    onNavigate: (UiEvent.Navigate) -> Unit,
     viewModel: ParkGuideViewModel,
     uiState: UiState,
 ) {
+    LaunchedEffect(Unit) {
+        viewModel.uiEvent.collectLatest { event ->
+            when (event) {
+                is UiEvent.Navigate -> {
+                    onNavigate(event)
+                }
+
+                else -> Unit
+            }
+        }
+    }
     Scaffold(topBar = {
         AppBar(
             title = stringResource(id = R.string.app_name),
             onNavigationIconClick = { },
-            navigateBack = false
+            navigateBackEnabled = false
         )
     }) { innerPadding ->
         LazyVerticalGrid(
@@ -37,8 +50,10 @@ fun StatesScreen(
             modifier = modifier.padding(innerPadding),
         ) {
             items(uiState.states) { state ->
-                StateListItem(state = state,
-                    onClick = { onStateClick(state); viewModel.updateCurrentState(it) })
+                StateListItem(state = state, onClick = {
+                    viewModel.onEvent(ParkEvent.OnCurrentStateUpdate(state))
+                    viewModel.onEvent(ParkEvent.OnCurrentStateClick)
+                })
             }
 
         }
