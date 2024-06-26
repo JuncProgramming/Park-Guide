@@ -55,7 +55,7 @@ fun DetailParkScreen(
         AppBar(
             title = stringResource(id = R.string.learnMore),
             onNavigationIconClick = { viewModel.onEvent(ParkEvent.OnNavigateUp) },
-            navigateBack = true
+            navigateBackEnabled = true
         )
     }) { innerPadding ->
         Card(
