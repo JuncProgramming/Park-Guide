@@ -7,8 +7,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.junclabs.parkguide.ui.ParkGuideViewModel
 import com.junclabs.parkguide.ui.DetailParkScreen
+import com.junclabs.parkguide.ui.ParkGuideViewModel
 import com.junclabs.parkguide.ui.ParksScreen
 import com.junclabs.parkguide.ui.StatesScreen
 
@@ -18,35 +18,36 @@ enum class Screen {
 
 @Composable
 fun Navigation(
-    viewModel: ParkGuideViewModel = androidx.lifecycle.viewmodel.compose.viewModel()
+    viewModel: ParkGuideViewModel = androidx.lifecycle.viewmodel.compose.viewModel(),
+    navController: NavHostController = rememberNavController()
 ) {
     val uiState by viewModel.uiState.collectAsState()
-    val navController: NavHostController = rememberNavController()
     NavHost(navController = navController, startDestination = Screen.States.name) {
         composable(route = Screen.States.name) {
             StatesScreen(
-                onStateClick = { navController.navigate(Screen.DetailPark.name) },
+                onNavigate = {
+                    navController.navigate(it.route)
+                },
                 viewModel = viewModel,
                 uiState = uiState
             )
         }
         composable(route = Screen.Parks.name) {
-            DetailParkScreen(
-                onNavigateBack = {
-                    navController.popBackStack(
-                        Screen.DetailPark.name, inclusive = false
-                    )
+            ParksScreen(
+                onNavigate = {
+                    navController.navigate(it.route)
                 },
-                uiState = uiState
+                onNavigateUp = {
+                    navController.navigateUp()
+                },
+                viewModel = viewModel,
+                uiState = uiState,
             )
         }
         composable(route = Screen.DetailPark.name) {
-            ParksScreen(
-                onParkClick = { navController.navigate(Screen.Parks.name) },
-                onNavigateBack = {
-                    navController.popBackStack(
-                        Screen.States.name, inclusive = false
-                    )
+            DetailParkScreen(
+                onNavigateUp = {
+                    navController.navigateUp()
                 },
                 viewModel = viewModel,
                 uiState = uiState
