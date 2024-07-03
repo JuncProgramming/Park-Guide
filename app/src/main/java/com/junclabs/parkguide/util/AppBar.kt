@@ -16,7 +16,7 @@ import com.junclabs.parkguide.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AppBar(title: String, onNavigationIconClick: () -> Unit, navigateBack: Boolean) {
+fun AppBar(title: String, onNavigationIconClick: () -> Unit, navigateBackEnabled: Boolean) {
     TopAppBar(
         title = {
             Text(
@@ -26,7 +26,7 @@ fun AppBar(title: String, onNavigationIconClick: () -> Unit, navigateBack: Boole
             )
         },
         navigationIcon = {
-            if (navigateBack) {
+            if (navigateBackEnabled) {
                 IconButton(onClick = onNavigationIconClick) {
                     Icon(
                         imageVector = Icons.AutoMirrored.Filled.ArrowBack,
